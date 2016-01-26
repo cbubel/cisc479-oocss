@@ -1,2 +1,68 @@
+$special-bg-border
+    border: 5px dashed $palette.specials.special-box.border
+    border-radius: 10px
+    background-color: $palette.specials.special-box.background
+
+$special-header-section
+    border-left: 10px solid $palette.specials.quote.header.border
+    background-color: $palette.specials.quote.header.background
+
+$border-bottom-round
+    border-bottom-left-radius: 10px
+    border-bottom-right-radius: 10px
+
+$main-quotebox
+    border-left: 10px solid $palette.specials.quote.body.border
+    background-color: $palette.specials.quote.body.background
+    padding: ($padding / 2) $padding
+    margin-bottom: ($padding / 2)
+    font-style: italic
+
+
+// Borrowed from http://codepen.io/yowainwright/pen/XJJgRW?utm_source=bypeople
+$ribbon, 
+$ribbon:before, 
+$ribbon:after {
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+$ribbon {
+    background: $palette.specials.ribbon.main
+    position: relative
+    &:before, &:after {
+        background: $palette.specials.ribbon.ends
+        position: absolute
+        z-index: -999
+        top: 0.85em
+        content: ' '
+        height: 0
+        border: 1.5em solid rgba(0, 0, 0, 0)
+        border-left: .9em solid white
+    }
+    &:before {
+        left:  -2.2em
+    }
+    &:after {
+        right: -2.2em
+        transform: rotate(180deg)
+    }
+}
+
 .intro
-    border-bottom: $border-standard
+    position: relative
+    @extends $border-bottom-round
+
+.main div:nth-child(3)
+    @extends $special-bg-border
+
+.summary
+    @extends $special-header-section
+    
+footer
+    @extends $ribbon
+    
+.requirements p:nth-child(3)
+    @extends $main-quotebox
+    

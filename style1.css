@@ -89,19 +89,56 @@ td {
 a img {
   border: none;
 }
+.main div:nth-child(3),
+.preamble {
+  border: 5px dashed #c2c2c2;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+}
+.summary {
+  border-left: 10px solid #500;
+  background-color: #801515;
+}
 .intro {
-  background-color: #8f210c;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
-header h1,
-header h2,
-.summary p,
-.summary a,
-.preamble h3,
-.preamble p {
-  color: #fffff0;
+.requirements p:nth-child(3) {
+  border-left: 10px solid #c2c2c2;
+  background-color: #f2f2f2;
+  padding: 20px 40px;
+  margin-bottom: 20px;
+  font-style: italic;
 }
-.summary a {
-  text-decoration: underline;
+footer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+footer {
+  background: #8f210c;
+  position: relative;
+}
+footer:before,
+footer:after {
+  background: #731a09;
+  position: absolute;
+  z-index: -999;
+  top: 0.85em;
+  content: ' ';
+  height: 0;
+  border: 1.5em solid rgba(0,0,0,0);
+  border-left: 0.9em solid #fff;
+}
+footer:before {
+  left: -2.2em;
+}
+footer:after {
+  right: -2.2em;
+  transform: rotate(180deg);
+}
+.intro {
+  position: relative;
 }
 * {
   box-sizing: border-box;
@@ -117,7 +154,7 @@ h4,
 h5,
 h6 {
   font-weight: bold;
-  font-family: 'Lobster', cursive;
+  font-family: 'Lobster';
 }
 a {
   font-weight: bold;
@@ -152,9 +189,6 @@ h6 {
 }
 small {
   font-size: 0.7072135785007072em;
-}
-body {
-  background-color: $background-color;
 }
 h1,
 h2,
@@ -306,36 +340,32 @@ aside {
   width: 100%;
   padding: 10px 20px;
 }
-header,
-.summary,
-.preamble {
-  min-width: 1200px;
+.page-wrapper {
+  max-width: 1200px;
   margin: 0 auto;
 }
 footer {
   text-align: center;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
 }
 footer a {
-  padding: 0 52px;
-  border-right: 1px solid #fffff0;
+  padding: 0 48px;
+  border-right: 1px solid #702213;
   font-size: 1.414em;
-  font-family: 'Francois One', sans-serif;
-  color: #8f210c;
+  font-family: 'Francois One';
+  color: #fffff0;
 }
 footer a:last-child {
   border-right: none;
 }
 footer a:hover {
-  color: #477187;
+  color: #c2c2c2;
 }
-.design-selection ul li a {
+aside div ul li a {
   text-transform: capitalize;
 }
 .design-selection ul li a:first-child {
   display: block;
-  font-family: 'Lobster', cursive;
+  font-family: 'Lobster';
   font-size: 1.414em;
 }
 a {
@@ -344,10 +374,26 @@ a {
 a:hover {
   text-decoration: underline;
 }
-.intro {
-  border-bottom: 1px solid #eee;
-}
 .intro div a,
 .main div a {
-  font-family: 'Francois One', sans-serif;
+  font-family: 'Francois One';
+}
+.summary a:hover {
+  color: #c2c2c2;
+}
+.preamble {
+  margin-top: 20px;
+}
+.summary {
+  position: absolute;
+  width: 480px;
+  right: 40px;
+  top: 40px;
+}
+.summary p,
+.summary a {
+  color: #fffff0;
+}
+.summary a {
+  text-decoration: underline;
 }
