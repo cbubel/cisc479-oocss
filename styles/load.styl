@@ -1,12 +1,29 @@
-@import 'reset.styl';
+@require 'reset.styl';
 global-reset()
 
-@import '/base/structure';
-@import '/base/font';
-@import '/base/color';
-@import '/base/list';
-@import '/base/spacing';
+// Variables and the like
+@require '/themes/variables';
+@require '/themes/backgrounds';
 
-@import '/layout/sidebar';
+// Base
+@require '/base/structure';
+@require '/base/font';
+@require '/base/color';
+@require '/base/list';
+@require '/base/spacing';
 
-@import '/themes/specific';
+// Layout
+@require '/layout/col';
+@require '/layout/basic-layout';
+
+// Modules
+@require '/modules/footer';
+@require '/modules/design-list';
+@require '/modules/links';
+
+// Themes
+@require '/themes/enhancements';
+@require '/themes/links';
+
+// @require '/themes/theme1';
+@require '/themes/theme2';
